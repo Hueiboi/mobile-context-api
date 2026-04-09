@@ -7,12 +7,12 @@ import {
   StyleSheet, 
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context'; 
-
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
 import { AppContext } from '../../context/AppContext';
 
 export default function SignInScreen() {
-  const { setIsLoggedIn } = useContext(AppContext);
+  const { login } = useContext(AppContext);
+  
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -46,7 +46,7 @@ export default function SignInScreen() {
 
         <TouchableOpacity 
           style={styles.signInBtn}
-          onPress={() => setIsLoggedIn(true)}
+          onPress={() => login()}
         >
           <Text style={styles.signInBtnText}>Sign In</Text>
         </TouchableOpacity>
